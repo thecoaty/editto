@@ -1,4 +1,5 @@
 footer{
+    height: 80px;
     width: 100%;
     background-color: var(--cor-primaria);
     display: flex;
@@ -6,7 +7,7 @@ footer{
     justify-content: center;
     color: black;
     position: relative;
-    z-index: 1;
+    margin-top: 80px;
 }
 .redes{
  left: 0;

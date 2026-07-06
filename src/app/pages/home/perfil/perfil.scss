@@ -5,10 +5,10 @@ main{
 .conteudo-info{
   align-items: center;
   text-align: center;
+  box-shadow: 5px 1px 1px var(--cor-primaria);
 }
 .container-img{
   overflow: hidden;
-  box-shadow: 5px 1px 1px var(--cor-primaria);
 }
 .conteudo-descricao{
   max-width: 350px;
@@ -18,13 +18,18 @@ main{
 }
 
 @media (max-width: 1280px){
-  main{
+  .conteudo-descricao{
+    font-size: 1rem;
+  }
+}
+@media (max-width:560px){
+  .container-img{
+    max-width: 180px;
+  }
+    main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 10px;
-  }
-  .conteudo-descricao{
-    font-size: 1rem;
   }
 }
