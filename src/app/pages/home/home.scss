@@ -24,8 +24,14 @@ main{
   justify-content: space-around;
 }
 
+@media (max-width:840px){
+  .conteudos{
+    gap: 10px;
+    flex-direction: column;
+}
+}
 
-/* Responsividade para telas menores */
+
 @media (max-width: 600px) {
   .banner {
     padding: 20px 0px 20px 0px;
@@ -33,4 +39,5 @@ main{
   .banner-title{
     font-size: 1.8rem;
   }
+
 }

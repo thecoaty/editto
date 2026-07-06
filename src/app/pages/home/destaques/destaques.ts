@@ -35,6 +35,6 @@ export class Destaques {
   }
 
   startAutoPlay(){
-    this.intervalId = setInterval (() => this.next(), 4000)
+    this.intervalId = setInterval (() => this.next(), 3000)
   }
 }

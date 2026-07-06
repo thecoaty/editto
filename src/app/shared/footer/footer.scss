@@ -3,16 +3,16 @@ footer{
     background-color: var(--cor-primaria);
     display: flex;
     align-items: center;
-    justify-content: space-between;
-}
-
-h3{
+    justify-content: center;
     color: black;
 }
-
+.redes{
+ left: 0;
+ position: absolute;
+ font-size: 2rem;
+}
 fa-icon{
-    font-size: 2rem;
-    color: black;
+ color: black;
 }
 fa-icon:hover{
     color: white;

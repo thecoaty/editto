@@ -41,4 +41,13 @@
       display: block;
     }
   }
+
+}
+@media (max-width:840px){
+.destaque-cards{
+  max-width: 840px;
+}
+.destaque-cards-imgs img{
+    width: 50%;
+}
 }
