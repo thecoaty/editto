@@ -1,3 +1,6 @@
+main{
+  height: 100vh;
+}
 .banner {
   position: relative;
   padding: 60px 0px 60px 0px;
@@ -15,7 +18,11 @@
   font-size: 5rem;
   text-shadow: 2px 2px 2px black;
 }
-
+.conteudos{
+  padding-top: 25px;
+  display: flex;
+  justify-content: space-around;
+}
 
 
 /* Responsividade para telas menores */
