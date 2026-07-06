@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { trigger, transition, style, animate } from '@angular/animations';
 import { MatCard, MatCardHeader, MatCardImage } from "@angular/material/card";
 
 @Component({
@@ -6,13 +7,25 @@ import { MatCard, MatCardHeader, MatCardImage } from "@angular/material/card";
   imports: [MatCard, MatCardHeader],
   templateUrl: './destaques.html',
   styleUrl: './destaques.scss',
+  animations:[
+    trigger('fadeAnimation', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'scale(0.95)' }),
+        animate('500ms ease-in-out', style({ opacity: 1, transform: 'scale(1)' }))
+      ]),
+      transition(':leave', [
+        animate('500ms ease-in-out', style({ opacity: 0, transform: 'scale(0.95)' }))
+      ])
+    ])
+  ]
 })
 export class Destaques {
   images =[
-    {url:'https://i.ytimg.com/an_webp/T1HlX9R8n4s/mqdefault_6s.webp?du=3000&sqp=COHEr9IG&rs=AOn4CLA1nedOAS5WevegranCPNnb9SObaA', alt:'img 1'},
-    {url:'https://i.ytimg.com/an_webp/MPRzk2vxmvU/mqdefault_6s.webp?du=3000&sqp=CLWnr9IG&rs=AOn4CLBjxCEfPsdPMrwGLAYD3egFQnAdzQ', alt:'img 1'},
-    {url:'https://i.ytimg.com/an_webp/0EmL10-HFMk/mqdefault_6s.webp?du=3000&sqp=COq-r9IG&rs=AOn4CLCP4HWVNjyYJu1vmN5eUle-GJ3KRQ', alt:'img 1'},
-    {url:'https://i.ytimg.com/an_webp/mILqjpycOzw/mqdefault_6s.webp?du=3000&sqp=CNSzr9IG&rs=AOn4CLDn2w7d_w5AxCqxkptIeMeyjQEdjw', alt:'img 1'}
+    {url:'https://img.youtube.com/vi/tjtCJD5Q5Nk/maxresdefault.jpg', alt:'img 1'},
+    {url:'https://img.youtube.com/vi/9Ru18RCJNys/maxresdefault.jpg', alt:'img 2'},
+    {url:'https://img.youtube.com/vi/qaIm5HMQFaM/maxresdefault.jpg', alt:'img 3'},
+    {url:'https://img.youtube.com/vi/0EmL10-HFMk/maxresdefault.jpg', alt:'img 3'},
+    
   ]
 
   currentIndex = 0;
@@ -28,13 +41,13 @@ export class Destaques {
   
   next(){
     if (this.currentIndex < this.images.length - this.itemsPerView) {
-      this.currentIndex++;
+      this.currentIndex += 2;
     } else {
       this.currentIndex = 0;
     }
   }
 
   startAutoPlay(){
-    this.intervalId = setInterval (() => this.next(), 3000)
+    this.intervalId = setInterval (() => this.next(), 4000)
   }
 }

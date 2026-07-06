@@ -8,10 +8,13 @@ main{
 }
 .container-img{
   overflow: hidden;
+  box-shadow: 5px 1px 1px var(--cor-primaria);
 }
 .conteudo-descricao{
   max-width: 350px;
+  min-width: 200px;
   font-size: 1.2rem;
+  box-shadow: 5px 1px 1px var(--cor-primaria);
 }
 
 @media (max-width: 1280px){
@@ -19,7 +22,7 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
   }
   .conteudo-descricao{
     font-size: 1rem;

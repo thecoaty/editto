@@ -2,7 +2,7 @@
     <mat-card-header><h2>Destaques</h2></mat-card-header>
     <div class="destaque-cards-imgs">
         @for(image of visibleImages; track image.url){
-            <img [src]="image.url" [alt]="image.alt">
+            <img [src]="image.url" [alt]="image.alt" [@fadeAnimation]>
         }
     </div>
 </mat-card>
