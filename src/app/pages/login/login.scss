@@ -1,0 +1,33 @@
+section{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+.editto-layout-login{
+    overflow: hidden;
+    width: 30%;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+}
+
+
+h1{
+    text-shadow: 2px 1px 3px black;
+}
+.login-form{
+    gap: 9px;
+    max-width: 500px;
+    min-width: 300px;
+    width: 100%;
+    max-height: 500px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-image: url(/banner.webp);
+    border-radius: 10px;
+}
+.login-form-inputs{
+    display: flex;
+    flex-direction: column;
+}

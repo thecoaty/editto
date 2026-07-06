@@ -3,7 +3,7 @@ import { MatCard, MatCardContent, MatCardImage } from '@angular/material/card';
 
 @Component({
   selector: 'app-perfil',
-  imports: [MatCard],
+  imports: [MatCard, MatCardContent],
   templateUrl: './perfil.html',
   styleUrl: './perfil.scss',
 })
