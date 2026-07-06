@@ -1,0 +1,20 @@
+.nav-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    a{
+        font-size: 1.2rem;
+    }
+}
+.conteudo-principal{
+    padding: 24px;
+}
+.btn-nav{
+    padding: 10px;
+}
+.sidebar {
+  width: 240px;
+  border-right: 1px solid rgba(0, 0, 0, 0.12);
+}

@@ -1,0 +1,23 @@
+<mat-sidenav-container class="sidenav-container">
+
+    <mat-sidenav #sidenav mode="side" closed class="sidebar" [fixedInViewport]="true">
+        <mat-nav-list class="nav-list">
+            <a mat-button href="/home">Home</a>
+            <a mat-button href="/login">Login</a>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <mat-toolbar>
+            <button class="btn-nav" matMiniFab (click)="sidenav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+        </mat-toolbar>
+        
+        <div  class="conteudo-principal">
+            <ng-content></ng-content>
+        </div>
+        
+    </mat-sidenav-content>
+
+</mat-sidenav-container>
