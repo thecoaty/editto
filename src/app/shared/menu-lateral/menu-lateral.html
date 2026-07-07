@@ -4,7 +4,13 @@
         <mat-nav-list class="nav-list">
             <img class="icone-editto" src="editto.png" alt="icone editto">
             <a mat-button href="/home">Home</a>
-            <a mat-button href="/login">Login</a>
+            @if (!logged()) {
+                <a mat-button href="/login">Login</a>
+            }
+            @if (logged()) {
+                <a mat-button href="/dashboard">Dashboard</a>
+                <button class="btn-logout" mat-button (click)="logout()">Logout</button>
+            }
         </mat-nav-list>
     </mat-sidenav>
 

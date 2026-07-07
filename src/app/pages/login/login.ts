@@ -43,7 +43,7 @@ export class Login {
     console.log(this.loginData)
     this.auth.login(this.loginData).subscribe({
       next:(response)=>{
-        this.router.navigate(["/home"])
+        this.router.navigate(["/dashboard"])
       },
       error:(err)=>{
         console.log(err)
