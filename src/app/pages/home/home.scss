@@ -1,23 +1,6 @@
 main{
   height: 100vh;
 }
-.banner {
-  position: relative;
-  padding: 60px 0px 60px 0px;
-  overflow: hidden;
-  border-radius: 0 0 8px 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.banner-bg{
-  z-index: -1;
-  position: absolute;
-}
-.banner-title{
-  font-size: 5rem;
-  text-shadow: 2px 2px 2px black;
-}
 .conteudos{
   padding-top: 25px;
   display: flex;
