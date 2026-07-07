@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, signal } from '@angular/core';
-import { Router } from '@angular/router';
 import { Users } from '../models/users';
 import { map, Observable, tap } from 'rxjs';
 
@@ -10,7 +9,7 @@ const usuario_key = 'auth-user'
   providedIn: 'root',
 })
 export class Auth {
-  constructor(private router: Router, private http: HttpClient){}
+  constructor(private http: HttpClient){}
 
   private jsonUrl = 'assets/usuarios.json';
   currentUser = signal<Users | null>(null);
