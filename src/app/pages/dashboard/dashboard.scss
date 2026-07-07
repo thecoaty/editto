@@ -2,3 +2,18 @@ main{
   height: 100vh;
 }
 
+.dashboard-container{
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.dashboard-painel{
+  display: flex;
+  width: 80%;
+  min-height: 600px;
+  justify-content: center;
+}
+mat-tab-group{
+  box-shadow: 5px 1px 1px var(--cor-primaria);
+}

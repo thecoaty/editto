@@ -3,10 +3,12 @@ import { Banner } from "../../shared/banner/banner";
 import { DashboardService } from '../../services/dashboard-service';
 import { Users } from '../../models/users';
 import { Auth } from '../../services/auth';
+import {MatTabsModule} from '@angular/material/tabs';
+
 
 @Component({
   selector: 'app-dashboard',
-  imports: [Banner],
+  imports: [Banner, MatTabsModule],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss',
 })

@@ -1,7 +1,23 @@
 <main>
     <app-banner>Dashboard</app-banner>
-    <div class="dashboard-painel">
-        <h1>{{ perfil()?.nome }}</h1>
-        <img [src]="perfil()?.img">
+    <div class="dashboard-container">
+        <ul>
+            <li>
+                <button>Novo Projeto</button>
+            </li>
+            <li>
+                <button>idk</button>
+            </li>
+        </ul>
+        <div class="dashboard-painel">
+        <mat-tab-group>
+            <mat-tab label="Perfil">
+                <h1>{{ perfil()?.nome }}</h1>
+                <img [src]="perfil()?.img">
+            </mat-tab>
+            <mat-tab label="Editar Publicações"> Content 1 </mat-tab>
+            <mat-tab label="idk"> Content 1 </mat-tab>
+        </mat-tab-group>
+        </div>
     </div>
 </main>
