@@ -1,28 +1,17 @@
 import { Component, signal } from '@angular/core';
 import { Banner } from "../../shared/banner/banner";
-import { DashboardService } from '../../services/dashboard-service';
-import { Users } from '../../models/users';
-import { Auth } from '../../services/auth';
 import {MatTabsModule} from '@angular/material/tabs';
+import { Projeto } from "../../shared/projeto/projeto";
+import { Perfil } from "../../shared/perfil/perfil";
+import { MatButtonModule } from '@angular/material/button';
 
 
 @Component({
   selector: 'app-dashboard',
-  imports: [Banner, MatTabsModule],
+  imports: [Banner, MatTabsModule, Projeto, Perfil, MatButtonModule],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss',
 })
 export class Dashboard {
-  constructor(private dashService: DashboardService, private auth: Auth){}
-
-  perfil = signal<Users | null>(null);
-
-  ngOnInit(){
-    this.dashService.getPerfilInfos().subscribe({
-      next:(dados) => {
-        if(dados) this.perfil.set(dados);
-      },
-      error : (err) => this.auth.logout()
-    })
-  }
+  
 }

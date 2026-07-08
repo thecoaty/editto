@@ -3,6 +3,7 @@ export interface Users {
     nome: string,
     usuario: string,
     senha: number | string,
-    img: string
+    img: string,
+    descricao: string
 }
 

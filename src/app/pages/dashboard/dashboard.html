@@ -3,19 +3,20 @@
     <div class="dashboard-container">
         <ul>
             <li>
-                <button>Novo Projeto</button>
+                <button matButton="filled">Novo Projeto</button>
             </li>
             <li>
-                <button>idk</button>
+                <button matButton="filled">idk</button>
             </li>
         </ul>
         <div class="dashboard-painel">
         <mat-tab-group>
             <mat-tab label="Perfil">
-                <h1>{{ perfil()?.nome }}</h1>
-                <img [src]="perfil()?.img">
+                <app-perfil></app-perfil>
             </mat-tab>
-            <mat-tab label="Editar Publicações"> Content 1 </mat-tab>
+            <mat-tab label="Editar Publicações">
+                <app-projeto></app-projeto>
+            </mat-tab>
             <mat-tab label="idk"> Content 1 </mat-tab>
         </mat-tab-group>
         </div>

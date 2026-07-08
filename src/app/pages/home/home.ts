@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { MatCardImage } from '@angular/material/card';
-import { Perfil } from './perfil/perfil';
+import { Perfil } from '../../shared/perfil/perfil';
 import { Destaques } from "./destaques/destaques";
 import { Banner } from "../../shared/banner/banner";
+import { Projeto } from "../../shared/projeto/projeto";
 
 @Component({
   selector: 'app-home',
-  imports: [MatButtonModule, MatCardImage, Perfil, Destaques, Banner],
+  imports: [MatButtonModule, Perfil, Destaques, Banner, Projeto],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
