@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { Perfil } from '../../shared/perfil/perfil';
+import { Perfil } from './perfil/perfil';
 import { Destaques } from "./destaques/destaques";
 import { Banner } from "../../shared/banner/banner";
 import { Projeto } from "../../shared/projeto/projeto";

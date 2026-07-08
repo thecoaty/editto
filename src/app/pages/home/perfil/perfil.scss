@@ -1,6 +1,7 @@
 main{
   display: flex;
   gap: 15px;
+  flex-wrap: wrap;
 }
 .conteudo-info{
   align-items: center;

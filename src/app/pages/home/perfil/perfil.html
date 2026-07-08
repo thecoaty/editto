@@ -1,0 +1,14 @@
+<main>
+    <mat-card class="conteudo-info">
+        <mat-card-content class="container-img">
+            <ng-content select="[image]"></ng-content>
+            <ng-content select="[title]">nome</ng-content>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card class="conteudo-descricao">
+        <mat-card-content>
+            <ng-content select="[descricao]" >descricao</ng-content>
+        </mat-card-content>
+    </mat-card>
+</main>
