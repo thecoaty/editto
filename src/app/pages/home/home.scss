@@ -1,14 +1,35 @@
-main{
-  height: 100vh;
-}
 .conteudos{
   padding-top: 25px;
   display: flex;
   justify-content: space-around;
 }
+.projetos-container{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .conteudo-img{
   max-width: 250px;
   width: 100%;
+}
+
+.img-projetos-container{
+  max-width: 380px;
+}
+.img-projetos{
+  width: 100%;
+  object-fit: fill;
+}
+
+.projetos{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 @media (max-width:1400px){

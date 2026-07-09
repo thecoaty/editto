@@ -28,3 +28,11 @@ button{
   height: 500px;
   overflow-y: auto;
 }
+
+.img-projetos-container{
+  max-width: 380px;
+}
+.img-projetos{
+  width: 100%;
+  object-fit: fill;
+}

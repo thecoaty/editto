@@ -2,10 +2,30 @@
     {
     "id": 1, 
     "usuario" : "coaty", 
-    "titulo" : "asdas",
-    "categoria" : "games", 
+    "titulo" : "MISERY: O Stalker Indie de Sobrevivencia",
+    "categoria" : "Games", 
     "urlLink" : "https://youtu.be/tjtCJD5Q5Nk", 
-    "urlImg": "", 
+    "urlImg": "https://img.youtube.com/vi/tjtCJD5Q5Nk/maxresdefault.jpg", 
+    "exibir" : true, 
+    "destaque": true
+    },
+    {
+    "id": 2, 
+    "usuario" : "coaty", 
+    "titulo" : "STALKER: SoC - A Experiência mais Atmosférica dos FPS",
+    "categoria" : "Games", 
+    "urlLink" : "https://youtu.be/YxfoIsEPK-s", 
+    "urlImg": "https://img.youtube.com/vi/YxfoIsEPK-s/maxresdefault.jpg", 
+    "exibir" : true, 
+    "destaque": true
+    },
+    {
+    "id": 3, 
+    "usuario" : "coaty", 
+    "titulo" : "A Experiência Caótica de Jet Set Radio Future",
+    "categoria" : "Games", 
+    "urlLink" : "https://youtu.be/qaIm5HMQFaM", 
+    "urlImg": "https://img.youtube.com/vi/qaIm5HMQFaM/maxresdefault.jpg", 
     "exibir" : true, 
     "destaque": true
     }
