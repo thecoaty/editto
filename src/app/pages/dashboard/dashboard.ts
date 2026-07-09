@@ -22,7 +22,6 @@ export class Dashboard {
   constructor(private dialog : MatDialog){}
 
   abrirPaginaProjeto(){
-    console.log(this.user)
     const dialog = this.dialog.open(AddProjetosBtn,{
       autoFocus: "true",
       data: this.user

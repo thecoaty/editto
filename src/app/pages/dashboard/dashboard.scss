@@ -1,15 +1,30 @@
 .dashboard-container{
   margin-top: 10px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   width: 100%;
+  gap: 15px;
 }
 .dashboard-painel{
   display: flex;
   width: 80%;
-  min-height: 600px;
+  max-width: 400px;
+  min-width: 330px;
+  height: 600px;
   justify-content: center;
+  flex-direction: column;
 }
-mat-tab-group{
-  box-shadow: 5px 1px 1px var(--cor-primaria);
+
+
+button{
+  font-size: 1.4rem;
+  padding: 25px;
+  margin-top: 10px;
+}
+
+.aba-projeto{
+  height: 500px;
+  overflow-y: auto;
 }

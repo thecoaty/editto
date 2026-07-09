@@ -1,24 +1,20 @@
 <main>
     <app-banner>Dashboard</app-banner>
     <div class="dashboard-container">
-        <ul>
-            <li>
-                <button matButton="filled" (click)="abrirPaginaProjeto()">Novo Projeto</button>
-            </li>
-            <li>
-                <button matButton="filled">idk</button>
-            </li>
-        </ul>
+        <button matButton="filled" (click)="abrirPaginaProjeto()">Novo Projeto</button>
         <div class="dashboard-painel">
-        <mat-tab-group>
-            <mat-tab label="Perfil">
-                <app-user-dashboard (perfilUser)="receberUser($event)" />
-            </mat-tab>
-            <mat-tab label="Editar Publicações">
-                <app-projeto></app-projeto>
-            </mat-tab>
-            <mat-tab label="idk"> Content 1 </mat-tab>
-        </mat-tab-group>
+            <mat-tab-group dynamicHeight="false">
+                <mat-tab label="Perfil">
+                    <app-user-dashboard (perfilUser)="receberUser($event)" />
+                </mat-tab>
+                <mat-tab label="Editar Projetos">
+                    <div class="aba-projeto">
+                    <app-projeto></app-projeto>
+                    <app-projeto></app-projeto>
+                    <app-projeto></app-projeto>
+                    </div>
+                </mat-tab>
+            </mat-tab-group>
         </div>
     </div>
 </main>
