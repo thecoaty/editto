@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, output, signal } from '@angular/core';
 import { DashboardService } from '../../../services/dashboard-service';
 import { Auth } from '../../../services/auth';
 import { Users } from '../../../models/users';
@@ -17,12 +17,18 @@ export class UserDashboard {
 
   perfil = signal<Users | null>(null);
 
+  perfilUser = output<string>()
+
   ngOnInit(){
     this.dashService.getPerfilInfos().subscribe({
       next:(dados) => {
-        if(dados) this.perfil.set(dados);
+        if(dados){
+          this.perfil.set(dados)
+          this.perfilUser.emit(dados.usuario)
+        };
       },
       error : (err) => this.auth.logout()
     })
+    
   }
 }

@@ -4,6 +4,7 @@ import { Perfil } from './perfil/perfil';
 import { Destaques } from "./destaques/destaques";
 import { Banner } from "../../shared/banner/banner";
 import { Projeto } from "../../shared/projeto/projeto";
+import { ProjetosService } from '../../services/projetos-service';
 
 @Component({
   selector: 'app-home',
@@ -12,5 +13,11 @@ import { Projeto } from "../../shared/projeto/projeto";
   styleUrl: './home.scss',
 })
 export class Home {
+
+  constructor(private projetoService : ProjetosService){}
+
+  ngOnInit(){
+    this.projetoService.inicializarDados()
+  }
 
 }
