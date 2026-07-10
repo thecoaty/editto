@@ -17,17 +17,19 @@
     <h1>Projetos de Coaty</h1>
     <div class="projetos">
       @for (projeto of projetos(); track projeto.id) {
-    <app-projeto>
-      <mat-card-title titulo>{{ projeto.titulo }}</mat-card-title>
-      <mat-card-subtitle tipo>{{ projeto.categoria }}</mat-card-subtitle>
+      @if(projeto.exibir){
+      <app-projeto>
+        <mat-card-title titulo>{{ projeto.titulo }}</mat-card-title>
+        <mat-card-subtitle tipo>{{ projeto.categoria }}</mat-card-subtitle>
 
-      <a class="img-projetos-container" url [href]="projeto.urlLink">
-        <img class="img-projetos" img mat-card-image [src]="projeto.urlImg" [alt]="projeto.titulo">
-      </a>
-    </app-projeto>
-    } @empty {
-    <p>Nenhum projeto encontrado.</p>
-    }
+        <a class="img-projetos-container" url [href]="projeto.urlLink">
+          <img class="img-projetos" img mat-card-image [src]="projeto.urlImg" [alt]="projeto.titulo">
+        </a>
+      </app-projeto>
+      }
+      } @empty {
+      <p>Nenhum projeto encontrado.</p>
+      }
     </div>
   </section>
 </main>

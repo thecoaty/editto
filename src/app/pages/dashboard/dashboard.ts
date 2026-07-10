@@ -9,11 +9,14 @@ import { MatDialog } from '@angular/material/dialog';
 import { ProjetosService } from '../../services/projetos-service';
 import { IProjetos } from '../../models/iprojetos';
 import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { DeleteProjetoBtn } from "./delete-projeto-btn/delete-projeto-btn";
+import { EditProjetoBtn } from "./edit-projeto-btn/edit-projeto-btn";
 
 
 @Component({
   selector: 'app-dashboard',
-  imports: [Banner, MatTabsModule, Projeto, MatButtonModule, UserDashboard, MatCardModule],
+  imports: [Banner, MatTabsModule, Projeto, MatButtonModule, UserDashboard, MatCardModule, MatIconModule, DeleteProjetoBtn, EditProjetoBtn],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss',
 })

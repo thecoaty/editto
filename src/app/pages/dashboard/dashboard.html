@@ -17,6 +17,10 @@
                             <a class="img-projetos-container" url [href]="projeto.urlLink">
                                 <img class="img-projetos" img mat-card-image [src]="projeto.urlImg" [alt]="projeto.titulo">
                             </a>
+                            <div buttons class="matButtons">
+                                <app-edit-projeto-btn [projetoId]="projeto.id"/>
+                                <app-delete-projeto-btn [projetoId]="projeto.id"/>
+                            </div>
                         </app-projeto>
                         } @empty {
                         <p>Nenhum projeto encontrado.</p>
