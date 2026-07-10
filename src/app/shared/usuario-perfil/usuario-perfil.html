@@ -1,6 +1,7 @@
 @if (isDashboard() == true) {
     <main class="perfil-dashboard">
     <mat-card class="conteudo-info-dashboard">
+        <app-editar-perfil-btn class="btn-edit" [usuario]="usuarioInfo()"></app-editar-perfil-btn>
         <mat-card-content class="conteudo-container-dashboard">
             <div class="container-img-dashboard">
                 <img image class="conteudo-img-dashboard" mat-card-image [src]="usuarioInfo().img"

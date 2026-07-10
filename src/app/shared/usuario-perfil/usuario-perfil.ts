@@ -9,10 +9,11 @@ import { Auth } from '../../services/auth';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { filter, map, startWith } from 'rxjs';
+import { EditarPerfilBtn } from "./editar-perfil-btn/editar-perfil-btn";
 
 @Component({
   selector: 'app-usuario-perfil',
-  imports: [MatTabsModule, MatButtonModule, MatCardModule],
+  imports: [MatTabsModule, MatButtonModule, MatCardModule, EditarPerfilBtn],
   templateUrl: './usuario-perfil.html',
   styleUrl: './usuario-perfil.scss',
 })
@@ -25,7 +26,7 @@ export class UsuarioPerfil {
   perfilUser = output<string>()
 
   private router = inject(Router);
-  
+
   private currentUrl = toSignal(
     this.router.events.pipe(
       filter((event): event is NavigationEnd => event instanceof NavigationEnd),
