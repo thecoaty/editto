@@ -5,7 +5,6 @@ import { ProjetosService } from '../../../services/projetos-service';
 import { MatDialog } from '@angular/material/dialog';
 import { AddProjetosBtn } from '../add-projetos-btn/add-projetos-btn';
 import { IProjetos } from '../../../models/iprojetos';
-import { EditProjetoForm } from './edit-projeto-form/edit-projeto-form';
 
 @Component({
   selector: 'app-edit-projeto-btn',
@@ -18,11 +17,12 @@ export class EditProjetoBtn {
   constructor(private dialog : MatDialog){}
 
   projeto = input<IProjetos>()
+  usuario = input<string>()
 
   abrirEditarProjeto(){
-    const dialog = this.dialog.open(EditProjetoForm,{
+    const dialog = this.dialog.open(AddProjetosBtn,{
       autoFocus: "true",
-      data: this.projeto()
+      data: { usuario: this.usuario, projeto: this.projeto() }
     })
   }
 

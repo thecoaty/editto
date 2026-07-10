@@ -6,7 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { IProjetos } from '../../../models/iprojetos';
 import { MatDialogModule, MatDialogRef, MatDialogContent, MatDialogClose, MAT_DIALOG_DATA, MatDialogTitle } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
 @Component({
@@ -17,27 +17,56 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 })
 export class AddProjetosBtn {
 
-  constructor(private projetosService: ProjetosService, private dialogRef: MatDialogRef<AddProjetosBtn>){}
 
-  public userRecebido = inject(MAT_DIALOG_DATA);
+  constructor(private projetosService: ProjetosService, private dialogRef: MatDialogRef<AddProjetosBtn>) { }
+
+  public dataRecebida = inject<{ usuario: any, projeto?: any }>(MAT_DIALOG_DATA);
+
+  isEditMode = false;
+  projetoData: any;
 
 
-  projetoData = {
-    id: 0,
-    usuario : this.userRecebido, 
-    titulo: "",
-    categoria: "", 
-    urlLink: "", 
-    urlImg: "", 
-    exibir: true,
-    destaque: false,
-  }
+  ngOnInit() {
+    this.isEditMode = !!this.dataRecebida?.projeto;
 
-  adicionarProjeto(form : NgForm){
-    if(form.valid){
-      this.projetoData.id = Date.now()
-      this.projetosService.adicionarProjeto(this.projetoData)
-      this.dialogRef.close(this.projetoData);
+    if (this.isEditMode) {
+      this.projetoData = { ...this.dataRecebida.projeto };
+    } else {
+      this.projetoData = {
+        id: 0,
+        usuario: this.dataRecebida?.usuario,
+        titulo: "",
+        categoria: "",
+        urlLink: "",
+        urlImg: "",
+        exibir: true,
+        destaque: false,
+      };
     }
   }
+
+  salvarProjeto(form: NgForm) {
+    if (form.valid) {
+      if (this.isEditMode) {
+        this.editarProjeto();
+      }
+      else {
+        this.adicionarProjeto()
+      }
+    }
+  }
+
+  adicionarProjeto() {
+    this.projetoData.id = Date.now()
+    this.projetosService.adicionarProjeto(this.projetoData)
+    this.dialogRef.close(this.projetoData);
+  }
+
+  editarProjeto() {
+    this.projetosService.editarProjeto(this.projetoData.id, this.projetoData)
+    this.dialogRef.close()
+  }
+
+
+
 }

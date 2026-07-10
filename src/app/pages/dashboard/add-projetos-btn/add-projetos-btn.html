@@ -1,7 +1,7 @@
-<h2 matDialogTitle>Criar Projeto</h2>
+<h2 matDialogTitle>{{ isEditMode ? 'Editar Projeto' : 'Adicionar Novo Projeto' }}</h2>
 
 <mat-dialog-content>
-    <form class="add-projeto" #projectform="ngForm" (ngSubmit)="adicionarProjeto(projectform)">
+    <form class="add-projeto" #form="ngForm" (ngSubmit)="salvarProjeto(form)">
 
         <mat-form-field appearance="outline" class="input-field">
             <mat-label>Titulo do projeto</mat-label>
@@ -35,8 +35,8 @@
             </mat-checkbox>
         </div>
         <div class="form-actions">
-        <button type="submit" matButton="filled" [disabled]="projectform.invalid">
-            Criar
+        <button type="submit" matButton="filled" [disabled]="form.invalid">
+            {{ isEditMode ? 'Salvar Alterações' : 'Adicionar' }}
         </button>
         <button mat-button mat-dialog-close>Cancelar</button>
         </div>
