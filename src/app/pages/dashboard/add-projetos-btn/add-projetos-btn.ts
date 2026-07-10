@@ -41,6 +41,7 @@ export class AddProjetosBtn {
         urlImg: "",
         exibir: true,
         destaque: false,
+        lgpt: false
       };
     }
   }

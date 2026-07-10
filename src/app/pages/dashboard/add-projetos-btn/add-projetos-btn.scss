@@ -3,8 +3,14 @@
    margin-top: 8px;
 
 }
-mat-dialog-content { min-width: 350px; }
+mat-dialog-content {
+  min-width: 350px;
+  overflow-x:hidden;
+}
 .checkbox-container {
   margin-bottom: 16px;
   display: block;
+}
+:host ::ng-deep .lgpd .mdc-form-field {
+  font-size: 12px; 
 }
