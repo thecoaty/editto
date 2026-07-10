@@ -33,7 +33,7 @@ export class Dashboard {
   abrirPaginaProjeto(){
     const dialog = this.dialog.open(AddProjetosBtn,{
       autoFocus: "true",
-      data: this.user
+      data: { usuario: this.user, projeto: null }
     })
   }
 

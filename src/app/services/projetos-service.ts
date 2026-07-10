@@ -8,7 +8,7 @@ import { Observable, of } from 'rxjs';
 })
 export class ProjetosService {
 
-  constructor(){
+  constructor() {
     this.inicializarDados();
   }
 
@@ -57,5 +57,12 @@ export class ProjetosService {
     localStorage.setItem(this.STORAGE_KEY, JSON.stringify(dados));
   }
 
-
+  editarProjeto(id: number, dataAtualizada: Partial<IProjetos>) {
+    this._projetos.update(lista =>
+      lista.map(projeto =>
+        projeto.id === id ? { ...projeto, ...dataAtualizada } : projeto
+      )
+    );
+    this.salvarNoStorage(this._projetos());
+  }
 }

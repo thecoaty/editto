@@ -18,7 +18,7 @@
                                 <img class="img-projetos" img mat-card-image [src]="projeto.urlImg" [alt]="projeto.titulo">
                             </a>
                             <div buttons class="matButtons">
-                                <app-edit-projeto-btn [projetoId]="projeto.id"/>
+                                <app-edit-projeto-btn [projeto]="projeto"/>
                                 <app-delete-projeto-btn [projetoId]="projeto.id"/>
                             </div>
                         </app-projeto>
