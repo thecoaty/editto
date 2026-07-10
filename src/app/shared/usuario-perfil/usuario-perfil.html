@@ -1,0 +1,31 @@
+@if (isDashboard() == true) {
+    <main class="perfil-dashboard">
+    <mat-card class="conteudo-info-dashboard">
+        <mat-card-content class="conteudo-container-dashboard">
+            <div class="container-img-dashboard">
+                <img image class="conteudo-img-dashboard" mat-card-image [src]="usuarioInfo().img"
+                [alt]="usuarioInfo().usuario">
+            </div>
+            
+            <h1 title>{{ usuarioInfo().usuario }}</h1>
+            <p descricao>{{ usuarioInfo().descricao }}</p>
+        </mat-card-content>
+    </mat-card>
+</main>
+}@else{
+    <main class="perfil-home">
+    <mat-card class="conteudo-info-home">
+        <mat-card-content class="container-img-home">
+            <img image class="conteudo-img-home" mat-card-image [src]="usuarioInfo().img"
+                [alt]="usuarioInfo().usuario">
+            <h1 title>{{ usuarioInfo().usuario }}</h1>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card class="conteudo-descricao-home">
+        <mat-card-content>
+            <p descricao>{{ usuarioInfo().descricao }}</p>
+        </mat-card-content>
+    </mat-card>
+</main>
+}
