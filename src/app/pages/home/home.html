@@ -1,17 +1,20 @@
 <main>
   <app-banner>editto</app-banner>
   <section class="conteudos">
-    <app-usuario-perfil></app-usuario-perfil>
+    <app-usuario-perfil ></app-usuario-perfil>
     <app-destaques>
 
     </app-destaques>
   </section>
   <section class="projetos-container">
-    <h1>Projetos de Coaty</h1>
+    @if(projetos.length >= 0){
+      <h1>Projetos de {{ perfilUser().usuario }}</h1>
+    }
     <div class="projetos">
       @for (projeto of projetos(); track projeto.id) {
       @if(projeto.exibir){
-      <app-projeto>
+      <div class="container-projeto">
+        <app-projeto>
         <mat-card-title titulo>{{ projeto.titulo }}</mat-card-title>
         <mat-card-subtitle tipo>{{ projeto.categoria }}</mat-card-subtitle>
 
@@ -19,6 +22,7 @@
           <img class="img-projetos" img mat-card-image [src]="projeto.urlImg" [alt]="projeto.titulo">
         </a>
       </app-projeto>
+      </div>
       }
       } @empty {
       <p>Nenhum projeto encontrado.</p>

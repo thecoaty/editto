@@ -10,11 +10,10 @@
 .dashboard-painel{
   display: flex;
   width: 80%;
-  max-width: 400px;
-  min-width: 330px;
-  height: 600px;
-  justify-content: center;
-  flex-direction: column;
+  height: 100%;
+  justify-content: space-around;
+  flex-direction: row;
+  gap: 10px;
 }
 
 button{
@@ -24,8 +23,18 @@ button{
 }
 
 .aba-projeto{
+  width: 80%;
   height: 500px;
+  min-width: 250px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
   overflow-y: auto;
+}
+.aba-usuario{
+  width: 20%;
+  min-width: 250px;
 }
 
 .img-projetos-container{
@@ -34,4 +43,11 @@ button{
 .img-projetos{
   width: 100%;
   object-fit: fill;
+}
+
+@media (max-width:600px) {
+  .dashboard-painel{
+    flex-direction: column;
+    align-items: center;
+  }
 }

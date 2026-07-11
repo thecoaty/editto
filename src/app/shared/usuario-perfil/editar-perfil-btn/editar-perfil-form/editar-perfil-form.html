@@ -9,20 +9,22 @@
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="input-field">
-            <mat-label>descricao</mat-label>
-            <input required matInput type="text" name="categoria" [(ngModel)]="perfilForm.descricao">
-        </mat-form-field>
-
-        <mat-form-field appearance="outline" class="input-field">
             <mat-label>Imagem (URL)</mat-label>
             <input matInput type="text" name="url" [(ngModel)]="perfilForm.img">
         </mat-form-field>
 
+        <mat-form-field appearance="outline" class="input-field input-descricao">
+            <mat-label>descricao</mat-label>
+            <textarea required matInput name="categoria" [(ngModel)]="perfilForm.descricao" matTextareaAutosize
+                matAutosizeMinRows="3" matAutosizeMaxRows="6">
+  </textarea>
+        </mat-form-field>
+
         <div class="form-actions">
-        <button type="submit" matButton="filled" [disabled]="form.invalid">
-            Salvar Alterações
-        </button>
-        <button mat-button mat-dialog-close>Cancelar</button>
+            <button type="submit" matButton="filled" [disabled]="form.invalid">
+                Salvar Alterações
+            </button>
+            <button mat-button mat-dialog-close>Cancelar</button>
         </div>
 
     </form>

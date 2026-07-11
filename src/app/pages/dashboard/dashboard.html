@@ -3,31 +3,32 @@
     <div class="dashboard-container">
         <button matButton="filled" (click)="abrirPaginaProjeto()">Novo Projeto</button>
         <div class="dashboard-painel">
-            <mat-tab-group dynamicHeight="false">
-                <mat-tab label="Perfil">
-                    <app-usuario-perfil (perfilUser)="receberUser($event)"></app-usuario-perfil>
-                </mat-tab>
-                <mat-tab label="Editar Projetos">
-                    <div class="aba-projeto">
-                        @for (projeto of projetos(); track projeto.id) {
-                        <app-projeto>
-                            <mat-card-title titulo>{{ projeto.titulo }}</mat-card-title>
-                            <mat-card-subtitle tipo>{{ projeto.categoria }}</mat-card-subtitle>
 
-                            <a class="img-projetos-container" url [href]="projeto.urlLink">
-                                <img class="img-projetos" img mat-card-image [src]="projeto.urlImg" [alt]="projeto.titulo">
-                            </a>
-                            <div buttons class="matButtons">
-                                <app-edit-projeto-btn [projeto]="projeto" [usuario]="projeto.usuario"/>
-                                <app-delete-projeto-btn [projetoId]="projeto.id"/>
-                            </div>
-                        </app-projeto>
-                        } @empty {
-                        <p>Nenhum projeto encontrado.</p>
-                        }
+
+            <div class="aba-usuario">
+                <app-usuario-perfil (perfilUser)="receberUser($event)"></app-usuario-perfil>
+            </div>
+
+            <div class="aba-projeto">
+                @for (projeto of projetos(); track projeto.id) {
+                <app-projeto>
+                    <mat-card-title titulo>{{ projeto.titulo }}</mat-card-title>
+                    <mat-card-subtitle tipo>{{ projeto.categoria }}</mat-card-subtitle>
+
+                    <a class="img-projetos-container" url [href]="projeto.urlLink">
+                        <img class="img-projetos" img mat-card-image [src]="projeto.urlImg" [alt]="projeto.titulo">
+                    </a>
+                    <div buttons class="matButtons">
+                        <app-edit-projeto-btn [projeto]="projeto" [usuario]="projeto.usuario" />
+                        <app-delete-projeto-btn [projetoId]="projeto.id" />
                     </div>
-                </mat-tab>
-            </mat-tab-group>
+                </app-projeto>
+                } @empty {
+                <p>Nenhum projeto encontrado.</p>
+                }
+            </div>
+
+
         </div>
     </div>
 </main>

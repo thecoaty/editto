@@ -5,8 +5,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { UsuarioService } from '../../services/usuario-service';
 import { Users } from '../../models/users';
 import { DashboardService } from '../../services/dashboard-service';
-import { Auth } from '../../services/auth';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { filter, map, startWith } from 'rxjs';
 import { EditarPerfilBtn } from "./editar-perfil-btn/editar-perfil-btn";
@@ -19,7 +18,7 @@ import { EditarPerfilBtn } from "./editar-perfil-btn/editar-perfil-btn";
 })
 export class UsuarioPerfil {
 
-  constructor(private dashService: DashboardService, private auth: Auth) { }
+  constructor(private dashService: DashboardService) { }
 
   perfil = signal<Users | null>(null);
 

@@ -1,18 +1,20 @@
 <mat-card class="card-projeto" appearance="outlined">
-    <mat-card-header>
-        <mat-card-title>
-            <ng-content select="[titulo]" />
-        </mat-card-title>
-        <mat-card-subtitle>
-            <ng-content select="[tipo]" />
-        </mat-card-subtitle>
-    </mat-card-header>
-    <div class="img-container">
-        <ng-content select="[url]">
-            <ng-content select="[Img]"></ng-content>
-        </ng-content>
-    </div>
-    <mat-card-actions *ngIf="isDashboard()">
-        <ng-content select="[buttons]"></ng-content>
+  <mat-card-header>
+    <mat-card-title>
+      <ng-content select="[titulo]" />
+    </mat-card-title>
+    <mat-card-subtitle>
+      <ng-content select="[tipo]" />
+    </mat-card-subtitle>
+  </mat-card-header>
+
+  <div class="img-container">
+    <ng-content select="[url]" />
+  </div>
+
+  @if (isDashboard()) {
+    <mat-card-actions>
+      <ng-content select="[buttons]" />
     </mat-card-actions>
+  }
 </mat-card>
