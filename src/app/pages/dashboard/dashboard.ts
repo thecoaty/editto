@@ -6,7 +6,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { AddProjetosBtn } from './add-projetos-btn/add-projetos-btn';
 import { MatDialog } from '@angular/material/dialog';
 import { ProjetosService } from '../../services/projetos-service';
-import { IProjetos } from '../../models/iprojetos';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { DeleteProjetoBtn } from "./delete-projeto-btn/delete-projeto-btn";

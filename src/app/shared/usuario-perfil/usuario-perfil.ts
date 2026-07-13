@@ -37,7 +37,8 @@ export class UsuarioPerfil {
   isDashboard = computed(() => this.currentUrl() === '/dashboard');
 
   ngOnInit() {
-    this.dashService.getPerfilInfos().subscribe({
+    if(this.isDashboard()){
+      this.dashService.getPerfilInfos().subscribe({
       next: (dados) => {
         if (dados) {
           this.perfil.set(dados)
@@ -45,6 +46,7 @@ export class UsuarioPerfil {
         };
       }
     })
+    }
 
   }
 

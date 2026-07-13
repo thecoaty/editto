@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component, output } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { ActivatedRoute } from '@angular/router';

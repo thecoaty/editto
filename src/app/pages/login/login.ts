@@ -50,4 +50,13 @@ export class Login {
     })
   }
 
+
+  cadastro(){
+    this.snackBar.open('Em breve!', 'Fechar', {
+      duration: 3000,
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom',
+    })
+  }
+
 }
