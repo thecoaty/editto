@@ -14,3 +14,6 @@ mat-dialog-content {
 :host ::ng-deep .lgpd .mdc-form-field {
   font-size: 12px; 
 }
+.contador-invalido {
+  color: var(--mdc-theme-error, #f44336) !important;
+}

@@ -10,14 +10,20 @@
 
         <mat-form-field appearance="outline" class="input-field">
             <mat-label>Imagem (URL)</mat-label>
-            <input matInput type="text" name="url" [(ngModel)]="perfilForm.img">
+            <input required matInput type="text" name="url" [(ngModel)]="perfilForm.img">
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="input-field input-descricao">
-            <mat-label>descricao</mat-label>
-            <textarea required matInput name="categoria" [(ngModel)]="perfilForm.descricao" matTextareaAutosize
-                matAutosizeMinRows="3" matAutosizeMaxRows="6">
-  </textarea>
+            <mat-label>Descricão</mat-label>
+            <textarea #descricao #descricaoModel="ngModel" required matInput name="categoria" [(ngModel)]="perfilForm.descricao"
+                matTextareaAutosize matAutosizeMinRows="4" matAutosizeMaxRows="6" minlength="100">
+            </textarea>
+            @if (descricaoModel.errors?.['minlength']) {
+            <mat-error>A descrição deve ter no mínimo 100 caracteres.</mat-error>
+            }
+            <mat-hint align="end" [class.contador-invalido]="descricaoModel.errors?.['minlength']">
+                {{ descricao.value.length || 0 }}
+            </mat-hint>
         </mat-form-field>
 
         <div class="form-actions">
