@@ -6,27 +6,27 @@
 
     </app-destaques>
   </section>
+  @if(projetos.length >= 0){
   <section class="projetos-container">
-    @if(projetos.length >= 0){
       <h1>Projetos de {{ perfilUser().usuario }}</h1>
-    }
+    
     <div class="projetos">
       @for (projeto of projetos(); track projeto.id) {
       @if(projeto.exibir){
-      <div class="container-projeto">
+      <div class="projeto-card">
         <app-projeto>
         <mat-card-title titulo>{{ projeto.titulo }}</mat-card-title>
         <mat-card-subtitle tipo>{{ projeto.categoria }}</mat-card-subtitle>
 
-        <a class="img-projetos-container" url [href]="projeto.urlLink">
+        <a target="_blank" class="img-projetos-container" url [href]="projeto.urlLink">
           <img class="img-projetos" img mat-card-image [src]="projeto.urlImg" [alt]="projeto.titulo">
         </a>
       </app-projeto>
       </div>
-      }
-      } @empty {
+      }} @empty {
       <p>Nenhum projeto encontrado.</p>
       }
     </div>
   </section>
+}
 </main>

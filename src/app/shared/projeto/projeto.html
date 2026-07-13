@@ -1,5 +1,5 @@
-<mat-card class="card-projeto" appearance="outlined">
-  <mat-card-header>
+<mat-card [ngClass]="{'card-projeto-dashboard' : isDashboard(), 'card-projeto-home' : !isDashboard()}" appearance="outlined">
+  <mat-card-header [ngClass]="{'quebraDeTexto' : isDashboard()}">
     <mat-card-title>
       <ng-content select="[titulo]" />
     </mat-card-title>

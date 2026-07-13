@@ -45,6 +45,10 @@ button{
   object-fit: fill;
 }
 
+.projeto-container{
+  max-width: 380px;
+}
+
 @media (max-width:600px) {
   .dashboard-painel{
     flex-direction: column;

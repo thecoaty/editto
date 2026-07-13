@@ -11,11 +11,12 @@
 
             <div class="aba-projeto">
                 @for (projeto of projetos(); track projeto.id) {
-                <app-projeto>
+                <div class="projeto-container">
+                    <app-projeto>
                     <mat-card-title titulo>{{ projeto.titulo }}</mat-card-title>
                     <mat-card-subtitle tipo>{{ projeto.categoria }}</mat-card-subtitle>
 
-                    <a class="img-projetos-container" url [href]="projeto.urlLink">
+                    <a target="_blank" class="img-projetos-container" url [href]="projeto.urlLink">
                         <img class="img-projetos" img mat-card-image [src]="projeto.urlImg" [alt]="projeto.titulo">
                     </a>
                     <div buttons class="matButtons">
@@ -23,6 +24,7 @@
                         <app-delete-projeto-btn [projetoId]="projeto.id" />
                     </div>
                 </app-projeto>
+                </div>
                 } @empty {
                 <p>Nenhum projeto encontrado.</p>
                 }

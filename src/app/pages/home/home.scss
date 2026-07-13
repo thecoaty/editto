@@ -11,17 +11,15 @@
   align-items: center;
 }
 
-.conteudo-img{
-  max-width: 250px;
-  width: 100%;
-}
-
 .img-projetos-container{
   max-width: 380px;
+  height: 200px;
+  overflow: hidden;
 }
 .img-projetos{
   width: 100%;
-  object-fit: fill;
+  height: 100%;
+  object-fit: cover;
 }
 
 .projetos{
@@ -30,6 +28,11 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 15px;
+}
+
+.projeto-card{
+  max-width: 350px;
+  max-height: 400px;
 }
 
 @media (max-width:1400px){

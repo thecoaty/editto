@@ -1,13 +1,12 @@
+import { NgClass } from '@angular/common';
 import { Component, output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { ActivatedRoute } from '@angular/router';
-import { NgIf } from '@angular/common';
-import { IProjetos } from '../../models/iprojetos';
 
 @Component({
   selector: 'app-projeto',
-  imports: [MatButtonModule, MatCardModule, NgIf],
+  imports: [MatButtonModule, MatCardModule, NgClass],
   templateUrl: './projeto.html',
   styleUrl: './projeto.scss',
 })
