@@ -1,6 +1,5 @@
 .destaques-card{
-    max-width: 710px;
-    min-width: 250px;
+    width: 710px;
     overflow: hidden;
     box-shadow: 11px 1px 1px var(--cor-primaria);
 }
@@ -15,10 +14,13 @@
 
 
 @media (max-width:840px){
-.destaque-cards{
-  max-width: 840px;
-}
 .destaque-cards-imgs img{
     width: 50%;
+}
+}
+
+@media(max-width: 740px){
+.destaques-card{
+  width: 300px;
 }
 }

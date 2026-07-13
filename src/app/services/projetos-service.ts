@@ -19,19 +19,25 @@ export class ProjetosService {
 
   public projetos = this._projetos.asReadonly();
 
+    private _projetosDestacados = signal<IProjetos[]>([]);
+
+  public projetosDestacados = this._projetosDestacados;
+
   private jsonUrl = "assets/projetos.json";
 
   private inicializarDados() {
     const dadosLocais = localStorage.getItem(this.STORAGE_KEY);
 
     if (dadosLocais) {
-      this._projetos.set(JSON.parse(dadosLocais))
+      this._projetos.set(JSON.parse(dadosLocais));
+      this.buscarProjetosEmDestaque();
     }
     else {
       this.http.get<IProjetos[]>(this.jsonUrl).subscribe({
         next: (dados) => {
           this._projetos.set(dados);
           this.salvarNoStorage(dados);
+          this.buscarProjetosEmDestaque();
         },
         error: (err) => {
           throw new Error('Erro ao carregar JSON');
@@ -65,4 +71,16 @@ export class ProjetosService {
     );
     this.salvarNoStorage(this._projetos());
   }
+
+  private buscarProjetosEmDestaque(): IProjetos[] {
+  const dadosStorage = localStorage.getItem(this.STORAGE_KEY);
+
+  if (dadosStorage) {
+    const listaCompleta: IProjetos[] = JSON.parse(dadosStorage);
+    const itensFiltrados = listaCompleta.filter(projeto => projeto.destaque === true);
+
+    this._projetosDestacados.set(itensFiltrados);
+  }
+  return [];
+}
 }

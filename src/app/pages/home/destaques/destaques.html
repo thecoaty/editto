@@ -1,8 +1,10 @@
 <mat-card class="destaques-card">
     <mat-card-header><h2>Destaques</h2></mat-card-header>
     <div class="destaque-cards-imgs">
-        @for(image of visibleImages; track image.url){
-            <img [src]="image.url" [alt]="image.alt" [@fadeAnimation]>
+        @for(image of visibleImages(); track image.id){
+            <a [href]="image.urlLink">
+                <img [src]="image.urlImg" [alt]="image.titulo" [@fadeAnimation]>
+            </a>
         }
     </div>
 </mat-card>

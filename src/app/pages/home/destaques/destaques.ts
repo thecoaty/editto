@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { MatCard, MatCardHeader, MatCardImage } from "@angular/material/card";
+import { ProjetosService } from '../../../services/projetos-service';
+import { IProjetos } from '../../../models/iprojetos';
 
 @Component({
   selector: 'app-destaques',
@@ -20,34 +22,50 @@ import { MatCard, MatCardHeader, MatCardImage } from "@angular/material/card";
   ]
 })
 export class Destaques {
-  images =[
-    {url:'https://img.youtube.com/vi/tjtCJD5Q5Nk/maxresdefault.jpg', alt:'img 1'},
-    {url:'https://img.youtube.com/vi/9Ru18RCJNys/maxresdefault.jpg', alt:'img 2'},
-    {url:'https://img.youtube.com/vi/qaIm5HMQFaM/maxresdefault.jpg', alt:'img 3'},
-    {url:'https://img.youtube.com/vi/0EmL10-HFMk/maxresdefault.jpg', alt:'img 3'},
-    
-  ]
 
-  currentIndex = 0;
-  intervalId:any;
+  private projetosService = inject(ProjetosService);
+
+  destaques = this.projetosService.projetosDestacados
+
+
+  currentIndex = signal<number>(0);
+  
   itemsPerView = 2;
+  private intervalId: any;
 
-  ngOnInit(){
-    this.startAutoPlay()
+  visibleImages = computed(() => {
+    const list = this.destaques();
+    const index = this.currentIndex();
+    return list.slice(index, index + this.itemsPerView);
+  });
+
+  ngOnInit() {
+    this.startAutoPlay();
   }
-  get visibleImages() {
-    return this.images.slice(this.currentIndex, this.currentIndex + this.itemsPerView);
+
+  ngOnDestroy() {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
   }
   
-  next(){
-    if (this.currentIndex < this.images.length - this.itemsPerView) {
-      this.currentIndex += 2;
+  next() {
+    const totalImages = this.destaques().length;
+    const current = this.currentIndex();
+
+    if (current < totalImages - this.itemsPerView) {
+      this.currentIndex.set(current + 2);
     } else {
-      this.currentIndex = 0;
+      this.currentIndex.set(0);
     }
   }
 
-  startAutoPlay(){
-    this.intervalId = setInterval (() => this.next(), 4000)
+  startAutoPlay() {
+    this.intervalId = setInterval(() => this.next(), 4000);
+  }
+
+  updateImages(newImages: IProjetos[]) {
+    this.destaques.set(newImages);
+    this.currentIndex.set(0); 
   }
 }
