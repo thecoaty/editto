@@ -2,11 +2,10 @@
   <app-banner>editto</app-banner>
   <section class="conteudos">
     <app-usuario-perfil ></app-usuario-perfil>
-    <app-destaques>
+    @if (projetosDestaque().length >=1) {<app-destaques/>}
 
-    </app-destaques>
   </section>
-  @if(projetos.length >= 0){
+  @if(temProjetosExibidos()){
   <section class="projetos-container">
       <h1>Projetos de {{ perfilUser().usuario }}</h1>
     
@@ -23,9 +22,8 @@
         </a>
       </app-projeto>
       </div>
-      }} @empty {
-      <p>Nenhum projeto encontrado.</p>
       }
+    }
     </div>
   </section>
 }

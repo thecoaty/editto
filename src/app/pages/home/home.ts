@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { Destaques } from "./destaques/destaques";
 import { Banner } from "../../shared/banner/banner";
@@ -16,10 +16,16 @@ import { UsuarioService } from '../../services/usuario-service';
 })
 export class Home {
 
+  temProjetosExibidos = computed(() => {
+  return this.projetos().some(projeto => projeto.exibir);
+});
+
   private projetoService = inject(ProjetosService)
   private userService = inject(UsuarioService)
 
   projetos = this.projetoService.projetos;
 
-  perfilUser = this.userService.usuarios
+  projetosDestaque = this.projetoService.projetosDestacados;
+
+  perfilUser = this.userService.usuarios;
 }

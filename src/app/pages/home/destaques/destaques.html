@@ -3,7 +3,7 @@
     <div class="destaque-cards-imgs">
         @for(image of visibleImages(); track image.id){
             <a [href]="image.urlLink">
-                <img [src]="image.urlImg" [alt]="image.titulo" [@fadeAnimation]>
+                <img class="img-carrosel" [src]="image.urlImg" [alt]="image.titulo" [@fadeAnimation]>
             </a>
         }
     </div>
