@@ -7,7 +7,8 @@
     "urlLink" : "https://youtu.be/tjtCJD5Q5Nk", 
     "urlImg": "https://img.youtube.com/vi/tjtCJD5Q5Nk/maxresdefault.jpg", 
     "exibir" : true, 
-    "destaque": true
+    "destaque": false,
+    "lgpd" : true
     },
     {
     "id": 2, 
@@ -17,7 +18,8 @@
     "urlLink" : "https://youtu.be/YxfoIsEPK-s", 
     "urlImg": "https://img.youtube.com/vi/YxfoIsEPK-s/maxresdefault.jpg", 
     "exibir" : true, 
-    "destaque": true
+    "destaque": false,
+    "lgpd" : true
     },
     {
     "id": 3, 
@@ -27,6 +29,40 @@
     "urlLink" : "https://youtu.be/qaIm5HMQFaM", 
     "urlImg": "https://img.youtube.com/vi/qaIm5HMQFaM/maxresdefault.jpg", 
     "exibir" : true, 
-    "destaque": true
+    "destaque": true,
+    "lgpd" : true
+    },
+    {
+    "id": 4, 
+    "usuario" : "coaty", 
+    "titulo" : "O inicio do Silksong é bem tranquilo na real",
+    "categoria" : "Games", 
+    "urlLink" : "https://youtu.be/qaIm5HMQFaM", 
+    "urlImg": "https://img.youtube.com/vi/9Ru18RCJNys/maxresdefault.jpg", 
+    "exibir" : true, 
+    "destaque": true,
+    "lgpd" : true
+    },
+    {
+    "id": 5, 
+    "usuario" : "coaty", 
+    "titulo" : "Aprenda Inglês Com Assassin's Creed BLACK FLAG",
+    "categoria" : "Aula", 
+    "urlLink" : "https://youtu.be/5MwFgTEu01U", 
+    "urlImg": "https://img.youtube.com/vi/5MwFgTEu01U/maxresdefault.jpg", 
+    "exibir" : true, 
+    "destaque": true,
+    "lgpd" : true
+    },
+    {
+    "id": 6, 
+    "usuario" : "coaty", 
+    "titulo" : "Meses de Inglês Em MINUTOS Com CYBERPUNK 2077",
+    "categoria" : "Aula", 
+    "urlLink" : "https://youtu.be/ZBjBBC_jKhA", 
+    "urlImg": "https://img.youtube.com/vi/ZBjBBC_jKhA/maxresdefault.jpg", 
+    "exibir" : true, 
+    "destaque": true,
+    "lgpd" : true
     }
 ]
