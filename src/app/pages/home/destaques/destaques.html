@@ -2,7 +2,7 @@
     <mat-card-header><h2>Destaques</h2></mat-card-header>
     <div class="destaque-cards-imgs">
         @for(image of visibleImages(); track image.id){
-            <a [href]="image.urlLink">
+            <a target="_blank" [href]="image.urlLink">
                 <img class="img-carrosel" [src]="image.urlImg" [alt]="image.titulo" [@fadeAnimation]>
             </a>
         }
