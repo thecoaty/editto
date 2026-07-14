@@ -36,6 +36,34 @@
   max-height: 400px;
 }
 
+.banner-title{
+  font-size: 5rem;
+  text-shadow: 2px 2px 2px black;
+}
+
+.banner-subtitle{
+  font-family: 'Inter', sans-serif; 
+  font-size: 1.1rem;
+  font-weight: 600; 
+  color: #1e1e1e;
+  text-transform: uppercase; 
+  letter-spacing: 1.5px; 
+  margin-top: 15px;
+}
+
+@media (max-width: 600px) {
+  .banner-title{
+    font-size: 2rem;
+  }
+
+  .banner-subtitle{
+  font-size: 0.85rem;           
+    letter-spacing: 1.2px;   
+    margin-top: 10px;
+}
+
+}
+
 @media (max-width:1400px){
   .conteudos{
     gap: 10px;

@@ -1,4 +1,5 @@
 <div class="banner">
     <img class="banner-bg" src="banner.webp" alt="">
-    <h1 class="banner-title"><ng-content/></h1>
+    <ng-content [select]="titulo"></ng-content>
+    <ng-content [select]="subtitulo"/>
 </div>

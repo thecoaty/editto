@@ -1,10 +1,11 @@
 
 .banner {
   position: relative;
-  padding: 60px 0px 60px 0px;
+  padding: 40px 0px 40px 0px;
   overflow: hidden;
   border-radius: 0 0 8px 8px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -12,18 +13,12 @@
   z-index: -1;
   position: absolute;
 }
-.banner-title{
-  font-size: 5rem;
-  text-shadow: 2px 2px 2px black;
-}
+
 
 
 @media (max-width: 600px) {
   .banner {
     padding: 20px 0px 20px 0px;
-  }
-  .banner-title{
-    font-size: 1.8rem;
   }
 
 }

@@ -1,5 +1,9 @@
 <main>
-  <app-banner>editto</app-banner>
+  <app-banner>
+    <h1 titulo class="banner-title">editto</h1>
+    
+    <span subtitulo class="banner-subtitle">A sua vitrine de projetos</span>
+  </app-banner>
   <section class="conteudos">
     <app-usuario-perfil ></app-usuario-perfil>
     @if (projetosDestaque().length >=1) {<app-destaques/>}
