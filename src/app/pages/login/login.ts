@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
 import { Auth } from '../../services/auth';
 import { FormsModule } from '@angular/forms';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
+import { Registroform } from './registroform/registroform';
 
 
 @Component({
@@ -16,14 +18,13 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
   styleUrl: './login.scss',
 })
 export class Login {
-  constructor(private router: Router, private auth:Auth, private snackBar : MatSnackBar){}
+  constructor(private router: Router, private auth:Auth, private snackBar : MatSnackBar, private dialog : MatDialog){}
+
 
   loginData ={
     usuario: '',
     senha: ''
   }
-
-
 
   hide = signal(true);
   clickEvent(event: MouseEvent) {
@@ -45,18 +46,15 @@ export class Login {
           horizontalPosition: 'center',
           verticalPosition: 'bottom',
          })
-
       }
     })
   }
 
-
-  cadastro(){
-    this.snackBar.open('Em breve!', 'Fechar', {
-      duration: 3000,
-      horizontalPosition: 'center',
-      verticalPosition: 'bottom',
-    })
+  abrirModalCadastro(){
+    const dialog = this.dialog.open(Registroform,{
+          autoFocus: "true",
+        })
   }
+  
 
 }

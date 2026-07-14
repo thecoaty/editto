@@ -1,0 +1,35 @@
+<h2 matDialogTitle>Editar Pefill</h2>
+
+<mat-dialog-content>
+    <form class="add-projeto" #form="ngForm" (ngSubmit)="cadastro()">
+
+        <mat-form-field appearance="outline" class="input-field">
+            <mat-label>Nome do Usuario</mat-label>
+            <input required matInput type="text" name="titulo" [(ngModel)]="registroForm.usuario">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="input-field">
+            <mat-label>Email</mat-label>
+            <input required matInput type="email" name="email" [(ngModel)]="registroForm.email">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="input-field">
+            <mat-label>Senha</mat-label>
+            <input required matInput type="password" name="senha" [(ngModel)]="registroForm.senha">
+        </mat-form-field>
+
+        <div class="checkbox-container">
+            <mat-checkbox class="lgpd" name="lgpd" [checked]="" required [(ngModel)]="registroForm.lgpd">
+                Li e aceito os <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm" target="_blank">Termos de Uso e a Política de Privacidade</a>. Declaro que sou o titular dos dados fornecidos e que possuo todas as autorizações, direitos autorais e permissões necessárias sobre o conteúdo deste projeto, autorizando o seu armazenamento e exibição na plataforma em conformidade com a LGPD. 
+            </mat-checkbox>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" matButton="filled" [disabled]="form.invalid">
+                Salvar Alterações
+            </button>
+            <button mat-button mat-dialog-close>Cancelar</button>
+        </div>
+
+    </form>
+</mat-dialog-content>
