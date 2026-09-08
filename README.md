@@ -1,59 +1,48 @@
-# Editto
+# 🎬 editto
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.27.
+![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Angular Material](https://img.shields.io/badge/Angular_Material-C2185B?style=for-the-badge&logo=angular&logoColor=white)
 
-## Development server
+> Aplicação web desenvolvida como **projeto final de conclusão do programa Ford Enter**, focada em consolidar e aplicar na prática os conhecimentos em desenvolvimento Front-End.
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
-```
+## 💻 Sobre o Projeto
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+O projeto consiste em uma plataforma de **portfólio interativo voltada para serviços de edição de vídeo**. A aplicação permite que o usuário gerencie seus projetos, personalize seu perfil e apresente seus trabalhos de forma moderna e responsiva.
 
-## Code scaffolding
+### 🚀 Principais Funcionalidades
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- 🔒 **Autenticação:** Sistema de login com controle de acesso.
+- 📁 **Gestão de Projetos (CRUD):** Criação, visualização, edição e remoção de trabalhos do portfólio.
+- 👤 **Personalização de Perfil:** Edição de dados e informações exibidas no perfil do usuário.
+- 🎨 **Interface Moderna:** Componentização e UI desenvolvidas com Angular Material.
 
-```bash
-ng generate component component-name
-```
+---
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🌐 Acesso à Aplicação e Credenciais
 
-```bash
-ng generate --help
-```
+A aplicação está rodando em produção e pode ser acessada diretamente pelo link:
+👉 **[https://editto-delta.vercel.app/](https://editto-delta.vercel.app/)**
 
-## Building
+### 💾 Armazenamento de Dados e Teste
 
-To build the project run:
+> ⚠️ **Nota:** A aplicação atualmente funciona exclusivamente no Front-End e não possui integração com um serviço de Back-End ou banco de dados remoto.
 
-```bash
-ng build
-```
+- **Persistência de Dados:** Todas as criações, edições e alterações feitas na aplicação são armazenadas localmente no seu navegador via `localStorage`.
+- **Acesso para Testes:** Para explorar as funcionalidades restritas e autenticadas da aplicação, utilize as seguintes credenciais padrão pré-configuradas:
+  - **Usuário:** `coaty`
+  - **Senha:** `123456`
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## 🛠️ Tecnologias Utilizadas
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+O projeto foi construído utilizando as seguintes ferramentas e tecnologias:
 
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- **Framework:** [Angular 20](https://angular.dev/)
+- **Linguagem:** [TypeScript](https://www.typescriptlang.org/)
+- **Componentes UI:** [Angular Material](https://material.angular.io/)
+- **Deploy:** [Vercel](https://vercel.com/)
+- **Estilização:** HTML5, CSS3 / SCSS
